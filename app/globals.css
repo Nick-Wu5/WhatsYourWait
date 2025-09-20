@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mobile-first optimizations */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
+  }
+}
+
+@layer components {
+  /* Touch-friendly buttons */
+  .btn-touch {
+    @apply min-h-[44px] min-w-[44px] px-4 py-3 text-base font-medium rounded-lg;
+    @apply active:scale-95 transition-transform duration-150;
+  }
+
+  /* Mobile-optimized inputs */
+  .input-mobile {
+    @apply w-full px-4 py-3 text-base border border-gray-300 rounded-lg;
+    @apply focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+    @apply placeholder-gray-400;
+  }
+}
